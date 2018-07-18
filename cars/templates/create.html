@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create{% endblock title %}
+
+{% block content %}
+<br>
+<div class="card bg-transparent mx-auto text-black border-dark" style="width: 18rem;">
+<br>
+	<form class="form-inline" action="{% url 'car-create' %}" method="POST" enctype="multipart/form-data">
+		 <div class="col-md-4 mb-3">
+  
+	  	{% csrf_token %}
+	 	 {{form|crispy}}
+	 	 <br>
+	  	<input class="mx-auto btn btn-dark btn-lg " type="submit" value="Create">
+	  
+	</form>
+	 </div>
+</div>
+{% endblock content %}
+
+
+<!-- mx auto to make the card in the center -->
